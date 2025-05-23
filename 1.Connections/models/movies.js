@@ -15,21 +15,14 @@ const movieSchema = new mongoose.Schema({
 // defining the model
 const movie  = mongoose.model("Movie" ,movieSchema);
  // Creating a document
-  const SingleDoc = async() => {
+  const UpdateById = async() => {
     try {
-        
-        
-        const result = await movie.find({name: "Avengers : Age of Ultron"}) // ALL Data !! 
-        console.clear();
+        // Update One
+        // updateOne(filter, whatToChange)
+        const result = await movie.updateOne({name : "Avengers Civil War"} , {ratings:4.5});
         console.log(result);
-      
-        // Iterating Over through the document
         
-        // result.forEach((movie)=>{
-        //     console.log(movie.Comments);
-            
-        // })
-
+        
     }catch(error)
     {
         console.log("error");
@@ -37,4 +30,4 @@ const movie  = mongoose.model("Movie" ,movieSchema);
     }
   }
 
-export { SingleDoc };
+export { UpdateById };
