@@ -15,48 +15,19 @@ const movieSchema = new mongoose.Schema({
 // defining the model
 const movie  = mongoose.model("Movie" ,movieSchema);
  // Creating a document
-  const createDoc = async() => {
+  const allDoc = async() => {
     try {
-        // Cfeating new Document
-        const m1 = new movie({
-            name : "Avengers Endgame",
-            ratings: 4,
-            money:600000,
-            genre: ['action' , 'Sci-FI'],
-            isActive: true,
-            Comments: [{value : "That was an amazing movie!!"}]
-
+        
+        
+        const result = await movie.find() // ALL Data !! 
+        // console.log(result);
+        // Iterating Over through the document
+        console.clear();
+        result.forEach((movie)=>{
+            console.log(movie.Comments);
+            
         })
-        const m2 = new movie({
-            name : "Avengers Infinity War",
-            ratings: 4.9,
-            money:900000,
-            genre: ['action' , 'Sci-FI'],
-            isActive: true,
-            Comments: [{value : "That was an amazing movie!!"}]
 
-        })
-        const m3 = new movie({
-            name : "Avengers Civil War",
-            ratings: 3.8,
-            money:890000,
-            genre: ['action' , 'Sci-FI'],
-            isActive: true,
-            Comments: [{value : "That was an amazing movie!!"}]
-
-        })
-        const m4 = new movie({
-            name : "Avengers : Age of Ultron",
-            ratings: 5,
-            money:560000,
-            genre: ['action' , 'Sci-FI'],
-            isActive: true,
-            Comments: [{value : "That was an amazing movie!!"}]
-
-        })
-        // Saving the document
-        const result = await movie.insertMany([m1,m2,m3,m4]);
-        console.log(result);
     }catch(error)
     {
         console.log("error");
