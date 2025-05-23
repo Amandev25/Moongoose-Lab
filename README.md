@@ -5,7 +5,7 @@
 - [x] What is Mongoose  
 - [x] Connecting Mongoose  
 - [x] Mongoose Schema and Model  
-- [ ] Mongoose Creating and Inserting Documents  
-- [ ] Mongoose Retrieving Data  
-- [ ] Mongoose Updating Data  
-- [ ] Mongoose Deleting Data  
+- [x] Mongoose Creating and Inserting Documents  
+- [x] Mongoose Retrieving Data  
+- [x] Mongoose Updating Data  
+- [x] Mongoose Deleting Data  
